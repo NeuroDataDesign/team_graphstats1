@@ -41,5 +41,12 @@ the network in a binary manner.
 https://www.microsoft.com/en-us/research/publication/decision-forests-for-classification-regression-density-estimation-manifold-learning-and-semi-supervised-learning/ Microsoft TR, A.Criminisi et al.
 
 ### Section 1:
-- Using ensemble methods gives better forests, hence random forests instead of trees
+- Using ensemble methods gives better accuracy, hence random forests instead of trees
 - Decision trees are randomly trained. Bagging randomly samples labelled training data
+
+## Matched Filters for Noisy Induced Subgraph Detection
+https://arxiv.org/pdf/1803.02423.pdf D.Sussmah et al.
+
+### Introduction
+- The matched filter allows for comparisons between graph representations with sets of vertices of different cardinality.
+- Graph matching matched filter: Aligning smaller networks to the closest subgraph in the larger network. 
