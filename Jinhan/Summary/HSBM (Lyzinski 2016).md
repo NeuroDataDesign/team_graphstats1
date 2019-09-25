@@ -1,7 +1,5 @@
 # HSBM [(Lyzinski 2016) ](https://arxiv.org/abs/1503.02115)
 
->  
-
 ## 0.  **Abstract**
 
 A robust, scalable, integrated method for subcommunity detection and comparison
@@ -76,13 +74,9 @@ A robust, scalable, integrated method for subcommunity detection and comparison
 
 -   Apply HSBM to (1) drosophila and (2) Friendster
 
->  
-
 ## 2.  **Background**
 
 a. Algorithm 1 (Main algo to detect hierarchical structure for graphs)
-
-<!-- -->
 
 -   Graspy [Shell code](https://github.com/neurodata/graspy/blob/18c34bc224b15b93d1d6b809515ac3f8e5733aa5/graspy/models/sbm.py#L497)
 
@@ -102,8 +96,6 @@ a. Algorithm 1 (Main algo to detect hierarchical structure for graphs)
 
 b. Algorithm 2
 
->  
-
 ## 3.  **2-level HSBM**
 
 -   Analysis of a 2-level synthetic HSBM graph (Fig.2)
@@ -112,19 +104,14 @@ b. Algorithm 2
 
     -   3 distinct motifs
 
-<!-- -->
-
 -   Successfully detect 3 motifs (Fig 3)
 
 -   The actual B matrix (block probability matrix) is slightly different from the value they set, but acceptable
 
 -   Thm 9?
 
-<!-- -->
-
 ## 4.  **Multilevel HSBM**
 
->  
 
 ## 5.  **Experiments**
 

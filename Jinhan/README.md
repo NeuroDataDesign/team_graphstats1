@@ -5,6 +5,7 @@
 1. Community Detection and Classification in Hierarchical Stochastic Blockmodels <font color="green">#ToDo</font>
     - Lyzinski et al. (2016)
     - [Link to the paper](https://arxiv.org/abs/1503.02115)
+    - [Summary](https://github.com/NeuroDataDesign/team_graphstats1/blob/master/Jinhan/Summary/HSBM%20(Lyzinski%202016).md)
 
 ## Related to the team project
 
