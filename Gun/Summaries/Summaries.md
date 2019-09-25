@@ -49,4 +49,25 @@ https://arxiv.org/pdf/1803.02423.pdf D.Sussmah et al.
 
 ### Introduction
 - The matched filter allows for comparisons between graph representations with sets of vertices of different cardinality.
-- Graph matching matched filter: Aligning smaller networks to the closest subgraph in the larger network. 
+- Graph matching matched filter: Aligning smaller networks to the closest subgraph in the larger network.
+
+### Background for Graph Matching
+**2.1**
+- Noisy matched filters: Search for the closest induced subgraph.
+- Try to determine when it's possible to narrow down to a specific vertex correspondence.
+
+**2.2**
+- There are approaches guaranteed to find an approximate global minimum, but they scale poorly.
+- Relaxation of constraints coupled with random restarts to avoid poor local minima.
+- Seeded vertices increase efficiency and accuracy.
+
+**2.3**
+- corrER: correlated Erdos-Renyi
+- corrER model: Two ER random graphs that share a common vertex set, with a correlation between the adjacencies of two vertices in each of the graphs.
+- http://jmlr.org/papers/volume15/lyzinski14a/lyzinski14a.pdf for more info on corrER
+- Should probably come back to this section for the algorithm
+
+### Padding Approaches
+- Match two graphs with different vertex cardinality by padding the smaller graph with rows/cols.
+- **Naive Padding:** Add extra rows and columns to the bottom and right of the matrix.
+- **Centered Padding** and **Oracle Padding** - Come back later because I have no idea why this works 
