@@ -356,38 +356,123 @@ Link: <https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/decis
 <img src="https://latex.codecogs.com/svg.latex?p(y&space;|&space;x=x^*)&space;=&space;\frac{1}{Z_{t,x^*}}&space;\sum_{l&space;\in&space;\mathcal{L}_{t,x^*}}&space;[y^B_l&space;\leq&space;y&space;<&space;y^T_l]\&space;\pi_l\&space;\mathcal{N}(y;&space;\mu_{y|x,l},&space;\sigma^2_{y|x,l})" title="p(y | x=x^*) = \frac{1}{Z_{t,x^*}} \sum_{l \in \mathcal{L}_{t,x^*}} [y^B_l \leq y < y^T_l]\ \pi_l\ \mathcal{N}(y; \mu_{y|x,l}, \sigma^2_{y|x,l})" />
 </p>
 
+- the <img src="https://latex.codecogs.com/svg.latex?\inline&space;Z_{t,x^*}" title="Z_{t,x^*}" /> paramater is found by calculating the conditional CDF difference between the upper and lower bounds of <img src="https://latex.codecogs.com/svg.latex?\inline&space;y" title="y" />
+- the forest conditional is just the averatge of the individual tree posteriors as before
+
 ### 5.7 - Quantitative analysis
+
+- overall error increases after optimal value of depth (overfitting)
+- large errors occured because axis-aligned weak learners were used in this case
 
 ## 6 - Manifold forests
 
+- related to dimensionality reduction and embedding
+- allows for automatic selection of discriminative features
+- is part of a more general forest model
+- automatic estimation of optimal dimensionality
+
 ### 6.1 - Literature of manifold learning
+
+- simpliest algorithm is PCA (linear model)
+- isometric feature mapping preserves geodesic distances
+- built upon Laplacian eigenmaps (preserve local pairwise distances only)
 
 ### 6.2 - Specializing the forest model for manifold learning
 
-#### 6.3 - Experiments and the effect of model parameters
+- given a set of unlabelled observation, we wish to find a smooth mapping that preserves the observations' relative geodesic distances
+- manifold forests built upon density forests (collections of clustering trees)
+- manifold forest model requires affinity model for optimal mapping
+- randomized node optimization is used again
+- information gain is also the same as before
+- the predictor model is the same as before
+- for a clustering tree, the affinity matrix <img src="https://latex.codecogs.com/svg.latex?\inline&space;W^t_ij&space;=&space;e^{-D^t(\mathbf{v}_i,&space;\mathbf{v}_j)}" title="W^t_ij = e^{-D^t(\mathbf{v}_i, \mathbf{v}_j)}" /> with different distance definitions
+- the affinity matrix is the average of the tree affinity matrices
+- low dimensionall embeddings can be found using a normalized graph-Laplacian matrix
+- the nonlinear embeddings can be found by formin matrix with the eigenvector is each column (starting with the first) and mapping each poiont to it's corresponding point after SVD
+- can interpolate previously unseen pints in the low dimensional space
+- for images, pairwise distances can be calculated by defining in the tree structure itself (in training)
+- can define family of features and the tree training process can optimally select features based on the paramaters
+- the bottleneck is the solution to the eigven-system
+
+### 6.3 - Experiments and the effect of model parameters
+
+- in binary affinity model, the values of the affinity matrix is binary
+- large amount of trees is more robust
+- binary model converges more slowly to truth than the Guassian model, but is much faster
+- more trees allows for better determination of intrinisic dimensionality of mapped space when plotting magnitudes of eigenvalues
 
 ## 7 - Semi-supervised forests
 
+- medium between previous chapters to focus on between supervised (regression and classification) and unsupervised (density and manifold)
+- we have a small set of labelled point and a large set of unlabelled ones for training
+
 ### 7.1 - Literature on semi-supervised learning
+
+- transductive SVM which maximizes separation in both labelled and unlabelled data
 
 ### 7.2 - Specializing the forest model for manifold learning
 
+- given both labelled and unlabelled data, we wish to associate a class label to all unlabelled data
+- optimize paramaters by maximizing information gain again
+- information gain calculated by adding unsupervised (dependent on all the data) and supervised (dependent on only the labelled data) information gains
+- to calculate these see the classification information gain and the density information gains discussed above
+- to get posterior, average posteriors of all the trees
+
 ### 7.3 - Label propagation in transduction forest
+
+- each leaf stores a different Gasussian with learned MLE for points within
+- use Mahalanobis symmetric geodesic distances
+
+<p align="center">
+<img src="https://latex.codecogs.com/svg.latex?d(\mathbf{s}_i,&space;\mathbf{s}_j)&space;=&space;\frac{1}{2}&space;\left(&space;\mathbf{d}_{ij}^T&space;\Lambda_{l(\mathbf{v}_i)}^{-1}&space;\mathbf{d}_{ij}&space;&plus;&space;\mathbf{d}_{ij}^T&space;\Lambda_{l(\mathbf{v}_j)}^{-1}&space;\mathbf{d}_{ij}&space;\right&space;)" title="d(\mathbf{s}_i, \mathbf{s}_j) = \frac{1}{2} \left( \mathbf{d}_{ij}^T \Lambda_{l(\mathbf{v}_i)}^{-1} \mathbf{d}_{ij} + \mathbf{d}_{ij}^T \Lambda_{l(\mathbf{v}_j)}^{-1} \mathbf{d}_{ij} \right )" />
+</p>
+
+- using this distance matric discourages from cutting across regions of low data density
 
 ### 7.4 - Induction from transduction
 
+- infer general probabilistic classification rule for geodesic-based algorithm (geodesic is just spherical distance btw)
+- tree posteriors are learned from all class labels
+- more trees means smoother posteriors
+- semis-supervised forests are not iterative unlike self-training techniques
+
 ### 7.5 - Examples, comparisons, and effect of model parameters
+
+- adding more labelled data shows higher predictor confidence
+- unlike SVM, the forest capture uncertainty
+- can handle multiple classes
 
 ## 8 - Random ferns and other forest variants
 
 ### 8.1 - Extremly randomized trees
 
+- optimization of each node paramater has been reduced or removed
+- increasing randomness produces lower overall prediction confidence and slower convergence of test error
+
 ### 8.2 - Random ferns
+
+- same test paramaters used in all nodes at the same tree level
+- ferns require deeper forests to split on linearly separable input datasets
+- both this and randomized trees are low parametric versions of decisions forests and so overfit much less
 
 ### 8.3 - Online forest training
 
+- useful to not have to train learned forests quickly without having to start training from scratch with new labelled training data
+- keep new training data fixed and then quickly update corresponding distributions
+
 ### 8.4 - Structured-output forests
+
+- can improve on classification when there is inherent dependence among input data
+- entangled forests
+  - feature feature vector is a function of the data and the output of previous split nodes in the same tree
+  - can use both intensities of an image and combinations of class posteriors to show improved generalization with shallow trees
+  - learns class spefic context
+- decision tree fields
+  - combine random decision forests and random fields together in a model
+  - different weights are learned using randomized decision trees
+  - use approximate MLEs
 
 ### 8.5 - Further forest variants
 
-## Conclusions
+- STAR model is a forest randomly trained on non-binary trees of depth 1
+- node harvest is made of multiple single nodes
