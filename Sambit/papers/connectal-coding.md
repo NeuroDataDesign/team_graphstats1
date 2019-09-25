@@ -40,3 +40,49 @@ Link: <https://www.sciencedirect.com/science/article/abs/pii/S0959438818301430>
   - diffusion connectomes are normalized as described above
 
 ## The purpose of brain codes
+
+- representation of information in the brain
+- connectal codes a storage of info
+- genome enccodes blueprint
+
+## The role of connectomes in connectal coding
+
+- connectotype is collection of nodes and edges (and maybe attributes)
+- no one-to-one between connectotypes and phenontypes
+- connectomes are interesting because they help understand relationship between brain structure and individual histories of cognitive phenotypes
+
+## Models of connectomes
+
+- most common way to model is "bag of edges" where each edge is independent
+  - requires many statistical tests
+  - network-based statistics lack theoretical guarantees for controlling false positives
+- "bag of features" calculates multiple graph-wise or node-wise statistics
+  - vastly different networks can produce the same value
+  - for a connectome with <img src="https://latex.codecogs.com/svg.latex?\inline&space;n" title="n" /> there are <img src="https://latex.codecogs.com/svg.latex?\inline&space;2^{n^2}" title="2^{n^2}" /> subgraphs
+  - different features are not independent of on another
+- statistical modeling of networks
+  - network is complex high dimensional random variagle with built-in structure or relationships
+  - ignore unique node labels
+  - built connectal coding on this foundation
+
+## Statistical models of connectomes
+
+- ER -> each edge is smpled identically and independently (Poisson)
+- SBM -> each node is in a group or community and the probability of edge sampling is determined by the group
+- each node as a own group ("latent position") operates on single unweighted networks with no attributes
+- non-parametric Bayesians models of populations of networks have also been proposed
+
+## Statistical model for connectal coding
+
+- have four random variables corresponding to 
+  - <img src="https://latex.codecogs.com/svg.latex?\inline&space;B" title="B" /> = the cognitive phenotypes of an individual, including and measuring behaviors
+  - <img src="https://latex.codecogs.com/svg.latex?\inline&space;C" title="C" /> = the connectome of an individual
+  - <img src="https://latex.codecogs.com/svg.latex?\inline&space;D" title="D" />=  the developmental history of an individual
+  - <img src="https://latex.codecogs.com/svg.latex?\inline&space;E" title="E" /> = the environment of the individual
+  - <img src="https://latex.codecogs.com/svg.latex?\inline&space;G" title="G" />, the genome of an individual (including epigenetics).
+
+## Connectal coding theories
+
+- can use hypothesis testing to answer some of these questions
+- need test statistic and p-value
+- search for signal subgraph (small set of nodes and edges to confer most of the info)
