@@ -13,17 +13,12 @@ A robust, scalable, integrated method for subcommunity detection and comparison
 -   Goal: classifying subcommunity
 
 -   Connectomics (see reference \[4\])
-
     -   (Cortical column conjecture)
-
     -   Limited \# of basic computing methods repeat ---&gt;brain's algos
-
     -   Data to test this conjecture not yet available \[6\]
 
 -   Social network: Friendster
-
     -   Communication structures affected by larger community
-
     -   ---&gt; should have repeated structures across subcommunity
 
 ### b. Previous studies
@@ -35,17 +30,12 @@ A robust, scalable, integrated method for subcommunity detection and comparison
     -   Random walks \[10, 11\]
 
     -   **Spectral clustering** \[12-17\]
-
         -   Author's previous study \[18\]
-
         -   Average degree need to be at least order
-
         -   Perform worse in parse subgraphs (table 1)
 
     -   **This current study's contribution**
-
         -   Formal delineation of hierarchical structures in a network
-
         -   Uncover subgraphs at multi scales
 
 -   Network comparison \[23-29\]
@@ -59,13 +49,11 @@ A robust, scalable, integrated method for subcommunity detection and comparison
     -   Lower-dimensional embedding \[14\]
 
     -   Adapted spectral clustering \[18\]
-
         -   Algo 2
 
 -   Community comparison
 
     -   Nonparametric graph inference \[28\]
-
         -   Density estimation
 
 -   Multi-sample hypothesis testing \[29\]
@@ -89,7 +77,6 @@ a. Algorithm 1 (Main algo to detect hierarchical structure for graphs)
 -   Compute dissimilarities between every two subgraphs
 
 -   Cluster subgraphs based on their motif (e.g. their structure types)
-
     -   Nonparametric test procedure \[28\]
 
 -   Recurse to the sub-sub level (on the current biggest subgraph)
@@ -99,15 +86,10 @@ b. Algorithm 2
 ## 3.  **2-level HSBM**
 
 -   Analysis of a 2-level synthetic HSBM graph (Fig.2)
-
     -   8 different blocks (subgraphs)
-
     -   3 distinct motifs
-
 -   Successfully detect 3 motifs (Fig 3)
-
 -   The actual B matrix (block probability matrix) is slightly different from the value they set, but acceptable
-
 -   Thm 9?
 
 ## 4.  **Multilevel HSBM**
@@ -115,6 +97,20 @@ b. Algorithm 2
 
 ## 5.  **Experiments**
 
--   Drosophila
+1. Drosophila
 
--   Friendster
+    1.  Dataset
+        -  There's no available full cortical connectome necessary to test the conjecture on the scale of fly brains
+        -  The authors of [6] construct a portion of the drosophila optic medulla connectome, which is believed to exhibit columnar structure
+
+    2. Constructing method
+        1. Construct the connectome between 376 neurons, which is a single column
+        2. Construct the connectome between this column and surrounding columns. Also construct the connectome within those surrounding columns.
+        3. Result: A largest connected component with 1748 vertices (kind of small compared to the traditional connectomics dataset?)
+    
+    3. Analysis # TODO
+    
+    4. Still working with the neurobiologist to determine the biological significance 
+        - ---> (The result can't prove anything now…)
+
+2.   Friendster
