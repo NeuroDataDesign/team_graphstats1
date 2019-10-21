@@ -32,7 +32,7 @@ between each feature vector and corresponding label vector. Then, order these co
 threshold them by a critical value, and the vertices that are left are the estimated SS.  
 **Iterative Screening**:
 The second is iterative screening, where the first method is iterated many times to eliminate "noise vertices".
-The more noise vertices, the correlation goes to zero. This method finds the again the correlations of every vertex,
+The more noise vertices, the correlation goes to zero. This method again finds the correlations of every vertex,
 but now it extracts every vertex whose correlation is in some quantile of the ordered correlation vector.
 Then, the previous step is repeated. This occurs until the magnitude of the vector of vertices is less
 than one. Then the index of the entry in the vertex vector that outputs the maximum correlation is
