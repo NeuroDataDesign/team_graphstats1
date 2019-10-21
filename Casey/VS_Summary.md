@@ -2,7 +2,7 @@
 ### [*Signal Subgraph Estimation Via Vertex Screening* S. Wang et al, 2018, arXiv](https://arxiv.org/abs/1801.07683)
 #### Casey Weiner 
 ____________________________
-*The Problem*: Given a set of graphs with corresponding labels, we want to predict the label based on the graoh structure.
+*The Problem*: Given a set of graphs with corresponding labels, we want to predict the label based on the graph structure.
 Especially with large data sets, it is important to find a subgraph, a subset of nodes and edges, that are 
 most likely responsible for the differences in graph type. However, this still proves to be a challenge since the 
 number of subgraphs increases exponentially with number of vertices. With large graphs like these, feature selection
