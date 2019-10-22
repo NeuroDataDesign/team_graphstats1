@@ -34,8 +34,8 @@ threshold them by a critical value, and the vertices that are left are the estim
 The second is iterative screening, where the first method is iterated many times to eliminate "noise vertices".
 The more noise vertices, the correlation goes to zero. This method again finds the correlations of every vertex,
 but now it extracts every vertex whose correlation is in some quantile of the ordered correlation vector.
-Then, the previous step is repeated. This occurs until the magnitude of the vector of vertices is less
-than one. Then the index of the entry in the vertex vector that outputs the maximum correlation is
+Then, the previous step is repeated. This occurs until the cardinality of the vector of vertices is
+greater than one. Then the index of the entry in the vertex vector that outputs the maximum correlation is
 found and the vector of those vertices is the SS. 
 
 *Justification*: As noise goes to zero, the correlation continually increases. It is shown that using
