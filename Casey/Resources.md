@@ -5,4 +5,6 @@
 #### [NDD Resources](https://github.com/NeuroDataDesign/resources)
 #### [Deep Learning Textbook](https://www.deeplearningbook.org)
 #### [Neurodata Practices](https://github.com/neurodata/practices)
+#### [J1 Data](https://github.com/neurodata/j1c)
+#### [Jesus CV Code in R](https://github.com/jesusdaniel/graphclass/blob/master/Classifiers/Cross-validation-function.R)
 #### 
