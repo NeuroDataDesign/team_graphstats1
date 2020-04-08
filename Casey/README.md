@@ -6,4 +6,5 @@
 ##### - Non-Iterative Vertex Screening
 ##### - Iterative Vertex Screening
 ##### - Algorithm [here](https://arxiv.org/abs/1701.08140)
-### [GMM Tasks]
+### GMM Tasks
+#### Tutorial Notebook for Clustering Functions
