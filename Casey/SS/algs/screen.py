@@ -113,7 +113,7 @@ class Screen(BaseSubgraph):
         X : np.ndarray, shape (n_graphs, n_vertices, n_vertices)
         y : np.ndarray, shape (n_graphs, 1)
 
-        Returns
+        Returns 
         -------
         out : np.ndarray, shape (n_graphs, n_subgraph_inds, n_subgraph_inds)
         """
