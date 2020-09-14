@@ -159,7 +159,7 @@ class BaseClassify(ABC, BaseEstimator, ClassifierMixin):
     """
     Base classification class.
 
-    See Also
+    See Also 
     --------
     graspy.subgraph.sparse_opt
     """
