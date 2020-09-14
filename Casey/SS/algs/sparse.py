@@ -488,7 +488,7 @@ def _construct_d(nodes=264):
     return D
 
 
-def _cross(v1, v2):
+def _cross(v1, v2): 
     out = v1.transpose() @ v2
 
     m = v1.shape[1]
