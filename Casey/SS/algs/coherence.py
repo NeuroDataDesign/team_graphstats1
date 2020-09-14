@@ -194,7 +194,7 @@ class Coherence(BaseSubgraph):
         y : vector, length (n_graphs)
             A vector of class labels. There must be a maximum of two classes.
 
-        Returns
+        Returns 
         -------
         sigsub : tuple, shape (2, n_edges)
         """
