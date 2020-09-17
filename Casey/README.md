@@ -6,6 +6,6 @@
 ##### - Non-Iterative Vertex Screening
 ##### - Iterative Vertex Screening
 ##### - Sparse Optimization
-##### - Algorithm [here](https://arxiv.org/abs/1701.08140)
+##### - Coherence (only editing)
 ### GMM Tasks
 #### Tutorial Notebook for Clustering Functions
